@@ -5,19 +5,18 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBukTsxc-G0qy7vilev7EJglMqK3aEL3gQ",
-  authDomain: "medium-3ae06.firebaseapp.com",
-  projectId: "medium-3ae06",
-  storageBucket: "medium-3ae06.appspot.com",
-  messagingSenderId: "913524518327",
-  appId: "1:913524518327:web:56175bbffb534522b1cc32",
-  measurementId: "G-LXEYYW65VZ"
+  apiKey: "AIzaSyDqsHsOtK0QSM4t3Hb08UPh2NBOwBB8YtM",
+  authDomain: "fir-blog-d0dcf.firebaseapp.com",
+  projectId: "fir-blog-d0dcf",
+  storageBucket: "fir-blog-d0dcf.appspot.com",
+  messagingSenderId: "23430314381",
+  appId: "1:23430314381:web:ebc4cf5b2e8c7ec75a65c4",
+  measurementId: "G-2KCT6X0X3G",
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const provider = new GoogleAuthProvider();
 export const storage = getStorage();
-export const db = getFirestore(app)
+export const db = getFirestore(app);
