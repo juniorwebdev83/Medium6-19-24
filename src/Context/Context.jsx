@@ -37,7 +37,6 @@ const Context = ({ children }) => {
     return () => unsubscribe();
   }, [currentUser]);
 
-  // get users
   useEffect(() => {
     const getUsers = () => {
       const postRef = query(collection(db, "users"));
@@ -86,5 +85,4 @@ const Context = ({ children }) => {
 };
 
 export default Context;
-
 export const Blog = () => useContext(BlogContext);

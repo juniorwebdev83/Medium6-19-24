@@ -7,7 +7,11 @@ import Actions from "./Actions/Actions";
 import { useNavigate } from "react-router-dom";
 
 const PostsCard = ({ post }) => {
-  const { title, desc, created, postImg, id: postId, userId, username } = post;
+  if (!post) {
+    return null; // or a loading/error component/message
+  }
+
+  const { title = "", desc = "", created, postImg, id: postId, userId, username = "" } = post;
   const { currentUser } = Blog();
 
   const navigate = useNavigate();

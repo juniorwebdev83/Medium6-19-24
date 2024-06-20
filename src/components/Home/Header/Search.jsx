@@ -8,13 +8,18 @@ const Search = ({ modal, setModal }) => {
   const [search, setSearch] = useState("");
   const { postData } = Blog();
 
+  useEffect(() => {
+    console.log(postData); // Add this line to log postData to the console
+  }, [postData]);
+
   const searchData =
     postData &&
-    postData?.filter((post) =>
-      post.title.toLowerCase().includes(search.toLowerCase())
+    postData.filter((post) =>
+      post?.title?.toLowerCase().includes(search.toLowerCase())
     );
 
   const navigate = useNavigate();
+
   return (
     <>
       <Modal modal={modal} setModal={setModal}>
@@ -50,11 +55,11 @@ const Search = ({ modal, setModal }) => {
                         }}
                         className="p-2 border-b border-gray-300 hover:bg-gray-100 cursor-pointer">
                         <h2 className="line-clamp-1 capitalize text-sm font-bold">
-                          {post.title}
+                          {post?.title}
                         </h2>
                         <div
                           className="text-xs text-gray-500 line-clamp-2"
-                          dangerouslySetInnerHTML={{ __html: post.desc }}
+                          dangerouslySetInnerHTML={{ __html: post?.desc }}
                         />
                       </div>
                     ))}
